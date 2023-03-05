@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "humao.rest-client",
+        "streetsidesoftware.code-spell-checker",
+        "cweijan.vscode-mysql-client2"
+    ]
+}

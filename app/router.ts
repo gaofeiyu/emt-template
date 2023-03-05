@@ -4,7 +4,7 @@ import { DataSource } from 'typeorm';
 
 declare module 'egg' {
   interface Context {
-    db: DataSource
+    db: DataSource;
   }
 }
 
@@ -14,12 +14,11 @@ async function connectDB(dbConfig) {
     .then(() => {
       console.log('Data Source has been initialized!');
     })
-    .catch(err => {
+    .catch((err) => {
       console.error('Error during Data Source initialization', err);
     });
   return AppDataSource;
 }
-
 
 export default async (app: Application) => {
   const { controller, router, config, context } = app;

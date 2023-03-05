@@ -1,22 +1,29 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Article extends BaseEntity {
   @PrimaryGeneratedColumn({ comment: '文章ID' })
-    id: string;
+  id: string;
 
   @Column('text', { comment: '文章正文' })
-    content: string;
+  content: string;
 
   @Column('text', { comment: '文章标题' })
-    title: string;
+  title: string;
 
   @Column('text', { comment: '作者' })
-    author: string;
+  author: string;
 
   @CreateDateColumn({ comment: '创建时间' })
-    createTime: Date;
+  createTime: Date;
 
-  @Column('date', { comment: '更新时间' })
-    updateTime: Date;
+  @UpdateDateColumn({ comment: '更新时间' })
+  updateTime: Date;
 }

@@ -1,2 +1,12 @@
 ### index
 GET http://127.0.0.1:7001/api/article HTTP/1.1
+
+### create
+POST http://127.0.0.1:7001/api/article HTTP/1.1
+content-type: application/json
+
+{
+  "content": "Hello EMT!",
+  "title": "This is a new EMT atricle",
+  "author": "Subaru"
+}
