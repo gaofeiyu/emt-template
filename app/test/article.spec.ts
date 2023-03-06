@@ -14,9 +14,24 @@ describe('article', () => {
   });
 
   test('index', async () => {
-    const indexSpy = vi.spyOn(service, 'index');
-    indexSpy.mockImplementationOnce(async () => mock.index);
+    const spy = vi.spyOn(service, 'index');
+    spy.mockImplementationOnce(async () => mock.index);
     const list = await service.index();
-    expect(list).toBe(mock.index);
+    expect(list).toEqual(mock.index);
+  });
+
+  test('create', async () => {
+    const spy = vi.spyOn(service, 'create');
+    spy.mockImplementationOnce(async () => {
+      return {
+        code: 0,
+        message: 'success',
+      };
+    });
+    const list = await service.create();
+    expect(list).toEqual({
+      code: 0,
+      message: 'success',
+    });
   });
 });
